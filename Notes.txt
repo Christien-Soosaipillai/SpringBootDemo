@@ -1,0 +1,15 @@
+Rest endpoint: makes it possible for a webapplicationto respond to HTTP Requests. If a URL is entered spring
+			 knows how to handle that request and what to run
+
+@RestController: tells spring that this class contains a method that would respond to incoming rest http requests
+@RequestMapping: maps a particular url pattern to a designated method
+
+business services: also know as a service component. It is a class annotated with the @Service annotation where you run your buisness logic code
+					-code that communicates with the database
+
+StereoType Annotations: annotations in Spring are markers for any class that fulfills a role within an application.
+
+@Component: Indicates that an annotated class is a “component”, meaning spring will auto-detect the classes for DI when scanning using anotations
+@Controller: Indicates that an annotated class is a “Controller”, create a map of model objects and find a view
+@Service: Indicates that an annotated class is a “Service”, specialization of the component which acts as the service-layer class
+@Repository: Indicates that an annotated class is a “Repository” – It is an annotation that marks the specific class as a Data Access Object		
