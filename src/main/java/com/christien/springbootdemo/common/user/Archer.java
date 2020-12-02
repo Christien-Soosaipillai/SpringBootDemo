@@ -1,14 +1,21 @@
 package com.christien.springbootdemo.common.user;
 
-public class User {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Archer {
 	
+	@Id
 	private int id;
 	private String username;
 	private String password;
 	private String firstName;
 	private String lastName;
 	
-	public User(int id, String username, String password, String firstName, String lastName) {
+	public Archer() {}
+	
+	public Archer(int id, String username, String password, String firstName, String lastName) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -55,6 +62,6 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
+
 	
 }

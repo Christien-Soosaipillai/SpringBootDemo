@@ -12,9 +12,9 @@ public class BowService {
 	@Autowired
 	private BowRepository bowRepository;
 	
-	public List<Bow> getAllBows(){
+	public List<Bow> getAllBows(Integer id){
 		List<Bow> bows = new ArrayList<>();
-		bowRepository.findAll()
+		bowRepository.findByArcherId(id)
 			.forEach(e->bows.add(e));
 		return bows;
 	}

@@ -12,36 +12,36 @@ import org.springframework.web.bind.annotation.RestController;
 import com.christien.springbootdemo.common.user.*;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/archers")
 public class UserController {
 	
 	
 	@Autowired
-	private UserService userService;
+	private ArcherService userService;
 	
 	@RequestMapping
-	public List<User> getUsers(){
-		return userService.getAllUsers();
+	public List<Archer> getArchers(){
+		return userService.getAllArchers();
 	}
 	
 	@RequestMapping("/{id}")
-	public User getUser(@PathVariable Integer id){
-		return userService.getUser(id);
+	public Archer getArcher(@PathVariable Integer id){
+		return userService.getArcher(id);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public void addUser(@RequestBody User user){
-		userService.addUser(user);
+	public void addArcher(@RequestBody Archer archer){
+		userService.addArcher(archer);
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
-	public void updateUser(@PathVariable Integer id, @RequestBody User user){
-		 userService.updateUser(id, user);
+	public void updateArcher(@PathVariable Integer id, @RequestBody Archer archer){
+		 userService.updateArcher(id, archer);
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
-	public void deleteUser(@PathVariable Integer id){
-		userService.deleteUser(id);
+	public void deleteARcher(@PathVariable Integer id){
+		userService.deleteArcher(id);
 	}
 	
 	

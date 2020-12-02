@@ -12,4 +12,23 @@ StereoType Annotations: annotations in Spring are markers for any class that ful
 @Component: Indicates that an annotated class is a “component”, meaning spring will auto-detect the classes for DI when scanning using anotations
 @Controller: Indicates that an annotated class is a “Controller”, create a map of model objects and find a view
 @Service: Indicates that an annotated class is a “Service”, specialization of the component which acts as the service-layer class
-@Repository: Indicates that an annotated class is a “Repository” – It is an annotation that marks the specific class as a Data Access Object		
+@Repository: Indicates that an annotated class is a “Repository” – It is an annotation that marks the specific class as a Data Access Object	
+
+Hibernate, and code in general that creates objects via reflection use Class<T>.newInstance() to create a new instance of your classes.
+This method requires a public no-arg constructor to be able to instantiate the object. For most use cases, providing a no-arg constructor is not a problem.	
+
+when creating functions for the Repository class the naming convention must be as follows
+findBy   ---    {ObjectName} ---- {ObjectProperty}
+
+
+JAR RUN:
+If I wanted to package and deploy a spring application as a jar I simply open a terminal and follow these steps:
+	1. Enter into the projects main directory and run: 'mvn clean install'	
+		-This will get me all the dependencies that my project needs
+		-This will compile everything into one jar file inside my target folder
+	2.	Then I run: 'java -jar target/name of Jar file'
+		-This will run springboot outside of the ide
+		
+		
+WAR RUN:		
+Same as above however first we change the <packaging> tag inside the pom.xml to 'war' and this creates a war file in the target folder
